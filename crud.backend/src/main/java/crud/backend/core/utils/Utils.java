@@ -13,7 +13,7 @@ public class Utils {
     private static ManufactureEntity toEntity (ManufactureDTO dto) {
         ManufactureEntity entity = new ManufactureEntity();
         entity.setManufactureId(dto.getManufactureId());
-        entity.setManufacturerActive(dto.getManufacturerActive());
+        entity.setManufacturerActive(dto.isManufacturerActive());
         entity.setManufactureNeighbourhood(dto.getManufactureNeighbourhood());
         return entity;
     }

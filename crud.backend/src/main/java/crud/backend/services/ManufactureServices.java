@@ -83,7 +83,7 @@ public class ManufactureServices implements ManufactureBussiness {
                 entity.setManufacturerCNPJ(Utils.unMaskCNPJ(dto.getManufacturerCNPJ()));
                 entity.setManufacturerFantasyName(dto.getManufacturerFantasyName());
                 entity.setManufacturerSocialName(dto.getManufacturerSocialName());
-                entity.setManufacturerActive(dto.getManufacturerActive());
+                entity.setManufacturerActive(dto.isManufacturerActive());
                 entity.setManufacturerSite(dto.getManufacturerSite());
                 entity.setManufacturerCountry(dto.getManufacturerCountry());
                 entity.setManufacturerCity(dto.getManufacturerCity());

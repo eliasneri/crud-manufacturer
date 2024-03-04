@@ -18,7 +18,7 @@ public class ManufactureDTO {
     private String manufacturerCNPJ;
     private String manufacturerFantasyName;
     private String manufacturerSocialName;
-    private String manufacturerActive;
+    private boolean manufacturerActive;
     private String manufacturerSite;
     private String manufacturerCountry;
     private String manufacturerCity;
@@ -30,7 +30,7 @@ public class ManufactureDTO {
         manufacturerCNPJ= Utils.maskedCNPJ(entity.getManufacturerCNPJ());
         manufacturerFantasyName=entity.getManufacturerFantasyName();
         manufacturerSocialName=entity.getManufacturerSocialName();
-        manufacturerActive=entity.getManufacturerActive();
+        manufacturerActive=entity.isManufacturerActive();
         manufacturerSite=entity.getManufacturerSite();
         manufacturerCountry=entity.getManufacturerCountry();
         manufacturerCity=entity.getManufacturerCity();

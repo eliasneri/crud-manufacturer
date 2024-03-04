@@ -31,7 +31,7 @@ public class ManufactureEntity {
     private String manufacturerFantasyName;
     @Column(length = 80)
     private String manufacturerSocialName;
-    private String manufacturerActive;
+    private boolean manufacturerActive;
     @Column(length = 40)
     private String manufacturerSite;
     @Column(length = 40)
