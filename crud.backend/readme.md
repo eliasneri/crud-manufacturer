@@ -17,7 +17,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:latest
-    restart: always
+    restart: no
     environment:
       POSTGRES_DB: crud-nec
       POSTGRES_USER: root
@@ -27,7 +27,7 @@ services:
 
   crud-backend:
     image: eliasneri/crud-backend-java17:latest
-    restart: always
+    restart: no
     ports:
       - "9598:9598"
     depends_on:
@@ -182,7 +182,7 @@ http://localhost:9598/manufacture/swagger-ui/index.html
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "localhost:9598/manufacture/find/allpages?page=0size=20&sort=manufacturerName,asc",
+          "raw": "localhost:9598/manufacture/find/allpages?page=0&size=20&sort=manufacturerName,asc",
           "host": [
             "localhost"
           ],
