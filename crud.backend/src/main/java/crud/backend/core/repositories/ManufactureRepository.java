@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface ManufactureRepository extends JpaRepository <ManufactureEntity, Long> {
 
 
-    // @Query("SELECT CASE WHEN COUNT(m) > 0 THEN true ELSE false END FROM manufacturer_base m WHERE m.manufacturerCnpj = :cnpj")
     @Query(value = "SELECT CASE WHEN COUNT(*) > 0 THEN true ELSE false END FROM manufacturer_base WHERE manufacturer_cnpj = :cnpj", nativeQuery = true)
     boolean findCnpj(String cnpj);
 }
