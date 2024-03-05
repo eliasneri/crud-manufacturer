@@ -4,43 +4,11 @@ Esta API utiliza a versão 17 do Java, e está implementada para utilização de
 
 Para executar apenas a API
 
-Certifique de tenha instalado o docker-compose em seu terminal.
+Certifique de tenha instalado o docker em seu terminal
 
 ```docker
-$ docker-compose -version
-docker-compose version 1.29.2, build unknown
-```
-Copie o conteúdo abaixo em um arquivo chamado docker-compose.yml
-```docker
-version: '3.8'
-
-services:
-  postgres:
-    image: postgres:latest
-    restart: no
-    environment:
-      POSTGRES_DB: crud-nec
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: 12345678
-    ports:
-      - "5432:5432"
-
-  crud-backend:
-    image: eliasneri/crud-backend-java17:latest
-    restart: no
-    ports:
-      - "9598:9598"
-    depends_on:
-      - postgres
-    deploy:
-      resources:
-        limits:
-          cpus: '0.5'
-          memory: 512M
-```
-Após salvar o arquivo conforme especificado, digite:
-```bash
-$ docker-compose up -d
+$  docker run --name postgres -e POSTGRES_USER=nec -e POSTGRES_PASSWORD=12345678 -e POSTGRES_DB=crud_nec -p 5432:5432 -d postgres:alpine
+$  docker run -p 9598:9598 eliasneri/crud-backend-java17:latest
 ```
 
 Isto irá baixar as imagens necessárias para o funcionamento da API, bem como o container do banco de dados Postgres.

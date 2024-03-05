@@ -2,8 +2,7 @@ version: '3.8'
 
 services:
   postgres:
-    name: postgres
-    image: postgres:latest
+    image: postgres:alpine
     restart: always
     environment:
       POSTGRES_DB: crud_nec
@@ -15,7 +14,6 @@ services:
       - nec-network
 
   crud-backend:
-    name: crud-backend
     image: eliasneri/crud-backend-java17:latest
     restart: always
     ports:
