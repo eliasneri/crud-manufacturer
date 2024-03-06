@@ -1,9 +1,9 @@
-version: '3.8'
+version: '3.9'
 
 services:
-  postgres:
-    image: postgres:alpine
-    restart: always
+  nec-postgres:
+    image: postgres:12-alpine
+    restart: no
     environment:
       POSTGRES_DB: crud_nec
       POSTGRES_USER: nec
@@ -15,11 +15,11 @@ services:
 
   crud-backend:
     image: eliasneri/crud-backend-java17:latest
-    restart: always
+    restart: no
     ports:
       - "9598:9598"
     depends_on:
-      - postgres
+      - nec-postgres
     networks:
       - nec-network
     deploy:
